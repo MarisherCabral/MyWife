@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Wife</title>
+    <link rel="stylesheet" href="more.css">
+    <link rel="icon" type="image/png" href="images/photo3.jfif">
+</head>
+<body>
+
+    <!-- Album Cover -->
+    <div class="album-container">
+        <img src="images/photo3.jfif" alt="Album Cover" class="album-cover">
+    </div>
+
+    <!-- Music Player -->
+    <div class="music-player">
+        <audio id="audio-player" controls>
+            <source src="images/music1.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+    
+    <div class="bouquet">
+        <div class="flower flower1"></div>
+        <div class="flower flower2"></div>
+        <div class="flower flower3"></div>
+        <div class="stem"></div>
+    </div>
+    
+
+    <div class="vn">
+        <p>
+            Happy Valentine’s Day, my wife! Every day with you feels like a celebration of love, but today, I just want to remind you how incredibly special you are to me. Thank you for bringing so much happiness, laughter, and love into my life. I’m beyond lucky to have you by my side, and I can’t wait for all the beautiful moments we’ll create together. You mean everything to me, and I love you more than I could ever put into words.
+        </p>
+    </div>
+
+     
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            for (let i = 0; i < 10; i++) {
+                let flower = document.createElement("div");
+                flower.innerHTML = "💐";
+                flower.classList.add("falling-flower");
+                document.body.appendChild(flower);
+        
+                flower.style.left = Math.random() * window.innerWidth + "px";
+                flower.style.animationDuration = (5 + Math.random() * 5) + "s";
+            }
+        });
+        </script>
+        
+        <style>
+        .falling-flower {
+            position: absolute;
+            font-size: 3rem;
+            animation: fall linear infinite;
+        }
+        
+        @keyframes fall {
+            from { transform: translateY(-100px); opacity: 1; }
+            to { transform: translateY(100vh); opacity: 0; }
+        }
+        </style>
+        
+    
+
+    <div class="back-button-container">
+        <a href="index.html" class="back-button">I LOVE YOU SO MUCH</a>
+    </div>
+
+    <script src="music.js"></script>
+
+</body>
+</html>

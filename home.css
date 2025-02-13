@@ -1,0 +1,178 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Layout */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Gallery Container */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 40px 20px;
+    justify-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Gallery Item */
+.gallery-item {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Overlay Effect on Click */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease;
+    border-radius: 15px;
+}
+
+/* Overlay Content */
+.overlay .letter {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 20px;
+}
+
+.overlay .message {
+    color: #fff;
+    font-size: 1.1rem;
+    max-width: 85%;
+    text-align: center;
+    display: none;
+}
+
+/* Show overlay when clicked */
+.gallery-item .overlay {
+    opacity: 0;
+}
+
+.gallery-item.clicked .overlay {
+    opacity: 1;
+}
+
+/* Back Button Container */
+.back-button-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Back Button Styling */
+.back-button {
+    padding: 12px 25px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.back-button:active {
+    background-color: #388e3c;
+}
+
+/* Letter and Message Styling */
+.overlay .letter {
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.overlay .message {
+    color: white;
+    font-size: 1.2rem;
+    max-width: 80%;
+    text-align: center;
+    display: none; /* Hide the message by default */
+}
+
+.more-section {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.more-text {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.more-button {
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.more-button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-container {
+        grid-template-columns: 1fr; /* 1 column on very small screens */
+    }
+}
